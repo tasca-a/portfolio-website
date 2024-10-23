@@ -10,37 +10,37 @@
 </head>
 
 <body>
-    <header>
+    <header class="solid-background-color">
         <h1 class="header-title">Alessandro Tasca</h1>
         <p class="header-subtitle">Android developer/Entry level UX designer</p>
     </header>
 
-    <div class="frame primary-border">
-        <nav class="">
-            <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">Projects</a></li>
-                <li><a href="">About me</a></li>
+    <div class="frame bordered grid-4-col gap-4">
+        <nav>
+            <ul class="navigation-list bordered right-border-only">
+                <li class="navigation-element"><a href="">Home</a></li>
+                <li class="navigation-element"><a href="">Projects</a></li>
+                <li class="navigation-element"><a href="">About me</a></li>
             </ul>
         </nav>
 
-        <main class="scrollable">
-            <section id="hero">
+        <main class="grid-col-span-3">
+            <section id="hero" class="grid-3-col gap-6">
                 <div class="section-content grid-col-span-2">
                     <h2 class="content-primary-title">Hi! Need an app?</h2>
-                    <p>
+                    <p class="line-height-large">
                         I develop high quality <b>Android applications</b> for my clients,
                         making them reach their <b>business goals</b> and delight their
                         user with an <b>awesome user experience</b>
                     </p>
-                    <div class="button-row">
+                    <div class="flex-row gap-1">
                         <button type="button" class="primary-button">Let's work together</button>
                         <button type="button" class="secondary-button">About me</button>
                     </div>
                 </div>
                 <img src="./res/hero-image.svg" alt="">
             </section>
-            <section id="values">
+            <section id="values" class="grid-3-col gap-6">
                 <img src="./res/values-image.png" alt="">
                 <div class="section-content grid-col-span-2">
                     <h2 class="content-secondary-title">My values</h2>
@@ -126,7 +126,7 @@
                     I'd love to hear from you.
                 </p>
                 <p>Fill out the form and let's start a conversation!</p>
-                <form action="">
+                <form action="" class="flex-column">
                     <label for="name">Your name</label>
                     <input type="text" name="name" id="name" placeholder="Your Name"><br>
                     <label for="email">Your email</label>
@@ -139,7 +139,7 @@
         </main>
     </div>
 
-    <footer class="footer-text">
+    <footer>
         <p>©Alessandro Tasca</p>
     </footer>
 </body>
