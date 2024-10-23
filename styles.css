@@ -81,7 +81,7 @@ footer {
 .frame {
     display: grid;
     gap: 4rem;
-    grid-template-columns: repeat(4, 4fr);
+    grid-template-columns: repeat(4, 1fr);
 
     position: fixed;
     left: var(--external-padding);
@@ -104,6 +104,9 @@ main {
 
 main>section {
     margin-bottom: 6rem;
+    max-width: 58rem;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 nav>ul {
@@ -184,26 +187,24 @@ button {
 }
 
 /* Home content */
-/* section>*:not(:last-child) {
-    margin-bottom: 2rem;
-} */
-
 .section-content>*:not(:last-child) {
     margin-bottom: 2rem;
 }
 
 #hero {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 6rem;
-}
-
-#hero>.section-content {
-    width: 29rem;
 }
 
 #hero p {
     line-height: 150%;
+}
+
+#values {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6rem;
 }
 
 .content-primary-title {
@@ -257,4 +258,8 @@ form>input::placeholder {
 form>.primary-button {
     padding: 8px 16px;
     border: none;
+}
+
+.grid-col-span-2 {
+    grid-column: span 2;
 }
