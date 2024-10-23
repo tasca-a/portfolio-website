@@ -1,0 +1,260 @@
+/* 
+Make the width of elements include padding values, so that when 
+you set a specific width the padding goes inwards 
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* All variables should be defined in the :root component */
+:root {
+    --background: #202020;
+    --container: #636363;
+    --text: #FFFFFF;
+    --primary: #FF6700;
+    --input-placeholder: #ffffff80;
+
+    --external-padding: 4rem;
+    
+    --blur-size: 8px;
+}
+
+@font-face {
+    font-family: "Sansation Light";
+    font-weight: 400;
+    src: url("./res/sansation/Sansation_Light.ttf")
+}
+
+@font-face {
+    font-family: "Sansation";
+    font-weight: 400;
+    src: url("./res/sansation/Sansation_Regular.ttf")
+}
+
+html,
+body {
+    height: 100%;
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: var(--background);
+    color: var(--text);
+}
+
+body {
+    font-family: "Sansation Light";
+    font-size: 14px;
+    font-weight: 300;
+    text-align: justify;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text);
+}
+
+/* Layout */
+header {
+    position: fixed;
+    left: 7rem;
+    top: 2.16rem;
+    z-index: 1;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: var(--background);
+}
+
+footer {
+    position: fixed;
+    left: var(--external-padding);
+    bottom: 1rem;
+}
+
+.frame {
+    display: grid;
+    gap: 4rem;
+    grid-template-columns: repeat(4, 4fr);
+
+    position: fixed;
+    left: var(--external-padding);
+    right: var(--external-padding);
+    top: var(--external-padding);
+    bottom: var(--external-padding);
+    overflow: hidden;
+    padding: 4rem;
+    padding-bottom: 0;
+}
+
+/* Style */
+/* Whole page */
+main {
+    grid-column: span 3;
+    overflow: scroll;
+    padding: var(--blur-size);
+    margin: calc(var(--blur-size) * -1);
+}
+
+main>section {
+    margin-bottom: 6rem;
+}
+
+nav>ul {
+    border-right-style: dotted;
+    border-right-color: var(--primary);
+    border-width: 2px;
+    padding-bottom: 15rem;
+}
+
+nav>ul>li {
+    font-size: 20px;
+    margin-bottom: 1.625rem;
+}
+
+b {
+    font-family: "Sansation";
+    font-weight: bold;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    font-size: 14px;
+    border: none;
+}
+
+.primary-border {
+    border-style: dotted;
+    border-color: var(--primary);
+    border-width: 2px;
+}
+
+.header-title {
+    font-size: 48px;
+}
+
+.header-subtitle {
+    font-size: 16px;
+    opacity: 70%;
+}
+
+.footer-text {
+    font-size: 9px;
+    opacity: 50%;
+}
+
+/* Primary button */
+.primary-button {
+    color: #202020;
+    font-family: "Sansation";
+    font-weight: 700;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #E3E3E3 0%, #E5E5E5 65%, #FFF 100%);
+    box-shadow: 0px 0px var(--blur-size) 0px rgba(255, 255, 255, 0.25);
+
+}
+
+.primary-button:hover {
+    background: linear-gradient(90deg, #c7c7c7 0%, #d4d4d4 65%, #ededed 100%);
+}
+
+.primary-button:active {
+    box-shadow: inset 0px 0px 16px rgba(122, 122, 122, 0.787);
+}
+
+/* Secondary button */
+.secondary-button {
+    color: white;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #555 0%, #555 65%, #636363 100%);
+}
+
+.secondary-button:hover {
+    background: linear-gradient(90deg, #4a4a4a 0%, #4a4a4a 65%, #464646 100%);
+}
+
+.secondary-button:active {
+    box-shadow: inset 0px 0px 16px rgba(56, 56, 56, 0.787);
+}
+
+/* Home content */
+/* section>*:not(:last-child) {
+    margin-bottom: 2rem;
+} */
+
+.section-content>*:not(:last-child) {
+    margin-bottom: 2rem;
+}
+
+#hero {
+    display: flex;
+    justify-content: center;
+    gap: 6rem;
+}
+
+#hero>.section-content {
+    width: 29rem;
+}
+
+#hero p {
+    line-height: 150%;
+}
+
+.content-primary-title {
+    text-align: start;
+    font-family: "Sansation";
+    font-size: 64px;
+    font-weight: 400;
+}
+
+.content-secondary-title {
+    text-align: start;
+    font-family: "Sansation";
+    font-size: 48px;
+    font-weight: 400;
+    margin-bottom: 2rem;
+}
+
+.button-row {
+    display: flex;
+    gap: 1rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form>label {
+    margin-bottom: 0.25rem;
+}
+
+form>input:not(.primary-button) {
+    border: none;
+    border-radius: 8px;
+    padding: 12px 8px;
+    background-color: var(--container);
+    margin-bottom: 1rem;
+    color: var(--text);
+}
+
+form>input:not(.primary-button):focus {
+    outline: none;
+    caret-color: var(--text);
+}
+
+form>input::placeholder {
+    font-size: 12px;
+    color: var(--input-placeholder);
+}
+
+form>.primary-button {
+    padding: 8px 16px;
+    border: none;
+}
