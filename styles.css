@@ -43,13 +43,13 @@ you set a specific width the padding goes inwards
 @font-face {
     font-family: "Sansation Light";
     font-weight: 400;
-    src: url("./res/sansation/Sansation_Light.ttf")
+    src: url("./res/font/Sansation_Light.ttf")
 }
 
 @font-face {
     font-family: "Sansation";
     font-weight: 400;
-    src: url("./res/sansation/Sansation_Regular.ttf")
+    src: url("./res/font/Sansation_Regular.ttf")
 }
 
 /* Basic setup */
@@ -118,10 +118,9 @@ footer {
 main {
     overflow: scroll;
 
-    /* Apply padding and equal negative margin to ensure that the
-       blur of the items (E.g. buttons) isn't cut off */
-    padding: var(--blur-size);
-    margin: calc(var(--blur-size) * -1);
+    /* Adjust the padding to counter the frame padding-right set to 0
+       used to place the scrollbar on the border. */
+    padding-right: var(--frame-padding);
 }
 
 main>section {
@@ -150,9 +149,13 @@ main>section {
     overflow: hidden;
 
     /* Set the internal padding except on the bottom, so that
-       the content can reach the border */
+       the content can reach the border. */
     padding: var(--frame-padding);
     padding-bottom: 0;
+
+    /* Set the right padding to 0 so that the scrollbar is
+       on the border of the frame. */
+    padding-right: 0;
 }
 
 .grid-4-col {
@@ -277,12 +280,24 @@ main>section {
     gap: 1rem;
 }
 
+.gap-1-5 {
+    gap: 1.5rem;
+}
+
 .gap-4 {
     gap: 4rem;
 }
 
 .gap-6 {
     gap: 6rem;
+}
+
+.margin-bottom-2 {
+    margin-bottom: 2rem;
+}
+
+.no-decoration {
+    list-style: none;
 }
 
 form>label {
