@@ -380,3 +380,66 @@ ul.flex-row {
 ul.flex-row>li {
     flex-basis: 0;
 }
+
+@media only screen and (max-width: 1232px) {
+    header {
+        position: relative;
+        left: 0;
+        top: 0;
+    }
+
+    .frame {
+        position: relative;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        border: none;
+        display: block;
+        /* width: 100vw; */
+    }
+
+    footer {
+        position: relative;
+        width: max-content;
+    }
+
+    .navigation-list {
+        border: none;
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width: 824px) {
+    main {
+        padding: 0;
+    }
+
+    .frame {
+        padding: calc(var(--frame-padding) / 2);
+    }
+
+    .grid-3-col {
+        display: block;
+    }
+
+    .grid-3-col>img {
+        display: none;
+    }
+
+    #tech>.grid-4-col {
+        display: block;
+    }
+
+    #tech>.grid-4-col>:not(:last-child) {
+        margin-bottom: 1rem;
+    }
+
+    #contact {
+        display: block;
+    }
+
+    #contact img {
+        width: 100%;
+    }
+}
