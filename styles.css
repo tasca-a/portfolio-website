@@ -25,9 +25,9 @@ you set a specific width the padding goes inwards
 
     /* Paddings */
     --frame-padding: 4rem;
-    
+
     /* Sizes */
-    --border-width: 2px;
+    --border-width: 1px;
     --border-radious: 8px;
     --blur-size: 8px;
     --font-size-small: 12px;
@@ -71,12 +71,13 @@ body {
     font-size: var(--font-size-normal);
     font-weight: 300;
     text-align: justify;
-    
+
     padding: 1rem;
     padding-top: 0;
 }
 
 img {
+    object-fit: contain;
     max-width: 100%;
 }
 
@@ -139,10 +140,12 @@ header {
 
     text-align: start;
 }
+
 header h1 {
     font-size: 2rem;
     font-weight: 300;
 }
+
 header p {
     font-size: 0.75rem;
     font-weight: 300;
@@ -153,29 +156,34 @@ header p {
     /* Make the clickable area bigger for touch screens */
     padding: 1rem;
 }
+
 #hamburger-menu-icon>* {
     /* Make the transition to the original state when the menu loses
        the "active" class */
     transform-origin: center center;
     transition: 500ms ease all;
 }
+
 #hamburger-menu-icon.active>:nth-child(1) {
     /* Make the first line invisible */
     opacity: 0;
     transition: opacity 500ms ease;
 }
+
 #hamburger-menu-icon.active>:nth-child(2) {
     /* Rotate the second line to create the "X" */
     transform-origin: center center;
     transform: rotate(45deg);
     transition: transform 500ms ease;
 }
+
 #hamburger-menu-icon.active>:nth-child(3) {
     /* Rotate the third line to create the "X" */
     transform-origin: center center;
     transform: rotate(-45deg);
     transition: transform 500ms ease;
 }
+
 #hamburger-menu-icon.active>:nth-child(4) {
     /* Make the fourth line invisible */
     opacity: 0;
@@ -194,7 +202,7 @@ nav {
     top: 5rem;
     bottom: 0;
     z-index: 2;
-    
+
     background-color: var(--color-background);
     padding: 1rem;
     padding-top: 4rem;
@@ -203,11 +211,13 @@ nav {
     transition-duration: 500ms;
     transition-behavior: allow-discrete;
 }
+
 nav.active {
     /* Show the nav when the menu is active. */
     opacity: 1;
     visibility: visible;
 }
+
 /* TODO: Transform the hamburger menu in an 'X' for closing the nav */
 nav>ul>li {
     margin-bottom: 2rem;
@@ -242,9 +252,11 @@ main>section:not(:last-child) {
 .content-container {
     margin-bottom: 1.5rem;
 }
+
 .content-container>*:not(:last-child) {
     margin-bottom: 2rem;
 }
+
 .content-container p {
     line-height: 150%;
 }
@@ -264,6 +276,7 @@ main>section:not(:last-child) {
     background: linear-gradient(90deg, #E3E3E3 0%, #E5E5E5 65%, #FFF 100%);
     box-shadow: 0px 0px var(--blur-size) 0px rgba(255, 255, 255, 0.25);
 }
+
 /* .primary-button:hover {
     background: linear-gradient(90deg, #c7c7c7 0%, #d4d4d4 65%, #ededed 100%);
 } */
@@ -276,6 +289,7 @@ main>section:not(:last-child) {
     border-radius: var(--border-radious);
     background: linear-gradient(90deg, #555 0%, #555 65%, #636363 100%);
 }
+
 /* .secondary-button:hover {
     background: linear-gradient(90deg, #4a4a4a 0%, #4a4a4a 65%, #464646 100%);
 } */
@@ -288,6 +302,7 @@ main>section:not(:last-child) {
     flex-direction: column;
     gap: 1rem;
 }
+
 .tech-stack-container section h3 {
     font-size: var(--font-size-small);
     font-weight: 300;
@@ -306,6 +321,7 @@ main>section:not(:last-child) {
     flex-direction: column;
     gap: 0.5rem;
 }
+
 .tech-stack-element ul {
     font-size: var(--font-size-small);
 }
@@ -317,14 +333,17 @@ main>section:not(:last-child) {
     gap: 0.75rem;
     list-style: none;
 }
+
 .icon-container>li {
     width: 3.25rem;
 }
+
 .icon-container>li>figure {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 .icon-container.tech-stack-element {
     flex-direction: row;
     padding-top: 1rem;
@@ -333,6 +352,7 @@ main>section:not(:last-child) {
 .skill-container {
     opacity: 70%;
 }
+
 #android .skill-container {
     display: flex;
     text-align: start;
@@ -343,10 +363,13 @@ form {
     display: flex;
     flex-direction: column;
 }
+
 form>label {
     margin-bottom: 0.25rem;
 }
-form>input:not(.primary-button), form>textarea {
+
+form>input:not(.primary-button),
+form>textarea {
     font-family: "Sansation Light";
     font-size: var(--font-size-normal);
     border: none;
@@ -356,11 +379,15 @@ form>input:not(.primary-button), form>textarea {
     margin-bottom: 1rem;
     color: var(--color-on-background);
 }
-form>input:not(.primary-button):focus, form>textarea {
+
+form>input:not(.primary-button):focus,
+form>textarea {
     outline: none;
     caret-color: var(--color-on-background);
 }
-form>input::placeholder, form>textarea::placeholder {
+
+form>input::placeholder,
+form>textarea::placeholder {
     color: var(--color-input-placeholder);
 }
 
@@ -381,6 +408,198 @@ form>input::placeholder, form>textarea::placeholder {
     }
 }
 
-/* @media only screen and (max-width: 323px) {
+@media only screen and (min-width: 760px) {
+    #hero {
+        display: flex;
+        gap: 6rem;
+    }
 
-} */
+    #hero .content-container {
+        max-width: 29.625rem;
+    }
+
+    #values {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: start;
+        gap: 5.68rem;
+    }
+
+    #values .content-container {
+        max-width: 25.4375rem;
+    }
+
+    #values p {
+        font-size: var(--font-size-small);
+    }
+
+    .tech-stack-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 52.4375rem;
+    }
+
+    #contact {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        max-width: 52.4375rem;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    :root {
+        --font-size-small: 14px;
+        --font-size-normal: 16px;
+    }
+
+
+    img {
+        max-width: fit-content;
+    }
+
+    #hamburger-menu {
+        display: none;
+    }
+
+    header {
+        padding: 0;
+        border: none;
+        max-width: fit-content;
+
+        /* Move the header over the frame */
+        position: fixed;
+        left: 7rem;
+        top: 2.16rem;
+
+        /* Move it forward on the z-axis so that it goes over the frame  */
+        z-index: 1;
+
+        /* Define the spacing on the horizontal axis */
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    header h1 {
+        font-size: var(--font-size-header-title);
+    }
+
+    header p {
+        font-size: var(--font-size-header-subtitle);
+    }
+
+    footer {
+        position: fixed;
+        left: var(--frame-padding);
+        bottom: 1rem;
+    }
+
+    .content {
+        margin: 0;
+        border: solid var(--color-primary);
+        border-width: var(--border-width);
+        justify-content: start;
+
+        /* Fix the frame in the center of the screen */
+        position: fixed;
+        left: var(--frame-padding);
+        right: var(--frame-padding);
+        top: var(--frame-padding);
+        bottom: var(--frame-padding);
+
+        /* Hide the excess content */
+        overflow: hidden;
+
+        /* Set the internal padding except on the bottom, so that
+       the content can reach the border. */
+        padding: var(--frame-padding);
+        padding-bottom: 0;
+
+        /* Set the right padding to 0 so that the scrollbar is
+       on the border of the frame. */
+        padding-right: 0;
+
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 4rem;
+    }
+
+    nav {
+        opacity: 1;
+        visibility: visible;
+
+        position: relative;
+
+        padding: 0;
+        top: 0;
+    }
+
+    nav>ul {
+        /* Set the height of the navigation list so that the border
+       can go below the min height of the list */
+        padding-bottom: 15rem;
+        border-right: solid var(--color-primary);
+        border-width: var(--border-width);
+    }
+
+    main {
+        overflow: scroll;
+
+        grid-column: span 3;
+
+        /* Adjust the padding to counter the frame padding-right set to 0
+           used to place the scrollbar on the border. */
+        padding-right: var(--frame-padding);
+    }
+
+    main>section {
+        /* Set the max width of all the sections so that it's not spread 
+           apart too far on larger screens */
+        max-width: 58rem;
+
+        /* Center the all the sections between the nav left border and
+           the frame right border */
+        margin-right: auto;
+        margin-left: auto;
+
+        /* Separate the sections between each other */
+        margin-bottom: 6rem;
+    }
+
+    #hero .content-container {
+        max-width: fit-content;
+    }
+
+    #values {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    #values .content-container {
+        grid-column: span 2;
+        max-width: fit-content;
+    }
+    #values img {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .tech-stack-container {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 58rem;
+    }
+    #android {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+    #android .tech-stack-element {
+        height: calc(100% - var(--font-size-small) - 4px - var(--border-width) * 2);
+    }
+
+    #design {
+        grid-column: span 2;
+    }
+
+    #contact {
+        max-width: 58rem;
+    }
+}
