@@ -7,54 +7,43 @@
     <title>Alessandro Tasca</title>
     <meta name="description" content="Android Developer and UX Designer in Italy">
     <link rel="stylesheet" href="styles.css">
-    <script defer src="./script.js"></script>
 </head>
 
 <body>
-    <header>
-        <div>
-            <h1>Alessandro Tasca</h1>
-            <p>Android developer/Entry level UX designer</p>
-        </div>
-        <div id="hamburger-menu">
-            <svg id="hamburger-menu-icon" width="24" height="19" viewBox="0 0 24 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 1.5H24" stroke="#FF6700" stroke-width="2" />
-                <!-- These two middle paths are the same for the sake of the animation -->
-                <path d="M0 9.5H24" stroke="#FF6700" stroke-width="2" />
-                <path d="M0 9.5H24" stroke="#FF6700" stroke-width="2" />
-                <path d="M0 17.5H24" stroke="#FF6700" stroke-width="2" />
-            </svg>
-        </div>
+    <header class="solid-background-color">
+        <h1 class="header-title">Alessandro Tasca</h1>
+        <p class="header-subtitle">Android developer/Entry level UX designer</p>
     </header>
 
-    <div class="content">
+    <div class="frame bordered grid-4-col gap-4">
         <nav>
-            <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">Projects</a></li>
-                <li><a href="">About me</a></li>
+            <ul class="navigation-list bordered right-border-only">
+                <li class="navigation-element"><a href="">Home</a></li>
+                <li class="navigation-element"><a href="">Projects</a></li>
+                <li class="navigation-element"><a href="">About me</a></li>
             </ul>
         </nav>
 
-        <main>
-            <section id="hero">
-                <div class="content-container">
-                    <h2 class="primary-title">Hi! Need an app?</h2>
-                    <p>
+        <main class="grid-col-span-3">
+            <section id="hero" class="grid-3-col gap-6">
+                <div class="section-content grid-col-span-2">
+                    <h2 class="content-primary-title">Hi! Need an app?</h2>
+                    <p class="line-height-large">
                         I develop high quality <b>Android applications</b> for my clients,
                         making them reach their <b>business goals</b> and delight their
                         user with an <b>awesome user experience</b>
                     </p>
-                    <div class="button-container">
+                    <div class="flex-row gap-1">
                         <button type="button" class="primary-button">Let's work together</button>
                         <button type="button" class="secondary-button">About me</button>
                     </div>
                 </div>
                 <img src="./res/img/app-demo.svg" alt="A smartphone showcasing an app">
             </section>
-            <section id="values">
-                <div class="content-container">
-                    <h2 class="secondary-title">My values</h2>
+            <section id="values" class="grid-3-col gap-6">
+                <img src="./res/img/book-keyboard.png" alt="A keyboard on top of a bullet planner and a smarphone">
+                <div class="section-content grid-col-span-2">
+                    <h2 class="content-secondary-title">My values</h2>
                     <div>
                         <p>
                             I see myself as a <b>digital artisan</b>, dedicated to crafting
@@ -70,15 +59,14 @@
                         </p>
                     </div>
                 </div>
-                <img src="./res/img/book-keyboard.png" alt="A keyboard on top of a bullet planner and a smarphone">
             </section>
             <section id="tech">
-                <h2 class="secondary-title">My tech stack</h2>
-                <div class="tech-stack-container">
-                    <section id="android">
+                <h2 class="content-secondary-title">My tech stack</h2>
+                <div class="grid-4-col gap-1">
+                    <div class="grid-col-span-2">
                         <h3>Android</h3>
-                        <div class="tech-stack-element">
-                            <ul class="icon-container">
+                        <div class="tech-stack-container bordered curved-angles padding-1 tech-stack-fill-height">
+                            <ul class="flex-row no-decoration">
                                 <li>
                                     <figure>
                                         <img src="res/icon/android-studio.svg" alt="">
@@ -110,32 +98,28 @@
                                     </figure>
                                 </li>
                             </ul>
-                            <div class="skill-container">
-                                <ul>
-                                    <li>MVI Architecture</li>
-                                    <li> MVVM Architecture</li>
-                                    <li> Jetpack libraries</li>
-                                    <li> Hilt Dependency Injection</li>
-                                    <li> JUnit, Mockito, Espresso</li>
-                                    <li> Retrofit</li>
-                                    <li> Room Database</li>
-                                </ul>
-                                <ul>
-                                    <li> Coroutines</li>
-                                    <li> Flows</li>
-                                    <li> XML Views</li>
-                                    <li> Accessibility services</li>
-                                    <li> Google Billing library</li>
-                                    <li> Google Play Console</li>
-                                    <li> Device Policy Controller (DPC)</li>
-                                </ul>
-                            </div>
+                            <ul>
+                                <li>MVI Architecture</li>
+                                <li> MVVM Architecture</li>
+                                <li> Jetpack libraries</li>
+                                <li> Hilt Dependency Injection</li>
+                                <li> JUnit, Mockito, Espresso</li>
+                                <li> Retrofit</li>
+                                <li> Room Database</li>
+                                <li> Coroutines</li>
+                                <li> Flows</li>
+                                <li> XML Views</li>
+                                <li> Accessibility services</li>
+                                <li> Google Billing library</li>
+                                <li> Google Play Console</li>
+                                <li> Device Policy Controller (DPC)</li>
+                            </ul>
                         </div>
-                    </section>
-                    <section>
+                    </div>
+                    <div class="grid-col-span-2">
                         <h3>Design</h3>
-                        <div class="tech-stack-element">
-                            <ul class="icon-container">
+                        <div class="tech-stack-container bordered curved-angles padding-1">
+                            <ul class="flex-row no-decoration">
                                 <li>
                                     <figure>
                                         <img src="res/icon/figma.svg" alt="">
@@ -149,7 +133,7 @@
                                     </figure>
                                 </li>
                             </ul>
-                            <ul class="skill-container">
+                            <ul>
                                 <li>Foundations of User Experience (UX) Design</li>
                                 <li>Start the UX Design Process: Empathize, Define, and Ideate</li>
                                 <li>Build Wireframes and Low-Fidelity Prototypes</li>
@@ -159,10 +143,10 @@
                                 <li>Design a User Experience for Social Good</li>
                             </ul>
                         </div>
-                    </section>
-                    <section>
+                    </div>
+                    <div>
                         <h3>Other</h3>
-                        <ul class="tech-stack-element icon-container">
+                        <ul class="flex-row flex-centered bordered curved-angles no-decoration padding-1">
                             <li>
                                 <figure>
                                     <img src="res/icon/c.svg" alt="">
@@ -182,10 +166,10 @@
                                 </figure>
                             </li>
                         </ul>
-                    </section>
-                    <section>
+                    </div>
+                    <div>
                         <h3>Web</h3>
-                        <ul class="tech-stack-element icon-container">
+                        <ul class="flex-row flex-centered bordered curved-angles no-decoration padding-1">
                             <li>
                                 <figure>
                                     <img src="res/icon/html.svg" alt="">
@@ -205,28 +189,28 @@
                                 </figure>
                             </li>
                         </ul>
-                    </section>
+                    </div>
                 </div>
             </section>
-            <section id="contact">
-                <div class="content-container">
-                    <h2 class="secondary-title">Get in touch</h2>
+            <section id="contact" class="grid-4-col gap-1-5">
+                <div class="grid-col-span-2">
+                    <h2 class="content-secondary-title">Get in touch</h2>
                     <p>
                         Have a <b>project</b> in mind or a question about how I can help
                         bring your <b>Android app</b> to life? Whether you're ready to
                         <b>start collaborating</b> or just want to explore your options,
                         I'd love to hear from you.
                     </p>
-                    <p>Fill out the form and let's start a conversation!</p>
+                    <p class="margin-bottom-2">Fill out the form and let's start a conversation!</p>
                     <img src="./res/img/signature.svg" alt="Alessandro Tasca's signature">
                 </div>
-                <form action="">
+                <form action="" class="flex-column grid-col-span-2">
                     <label for="name">Your name</label>
                     <input type="text" name="name" id="name" placeholder="Your Name"><br>
                     <label for="email">Your email</label>
                     <input type="text" name="email" id="email" placeholder="Your@email.com"><br>
                     <label for="email">Message</label>
-                    <textarea name="message" id="message" placeholder="Your message" rows="3"></textarea>
+                    <input type="text" name="message" id="message" placeholder="Your message"><br>
                     <input type="submit" value="Submit" class="primary-button">
                 </form>
             </section>

@@ -1,0 +1,445 @@
+/* 
+Make the width of elements include padding values, so that when 
+you set a specific width the padding goes inwards 
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* All variables should be defined in the :root component */
+:root {
+    /* Colors */
+    --color-background: #202020;
+    --color-on-background: #FFFFFF;
+    --color-on-background-reverse: #000;
+    --color-container: #636363;
+    --color-primary: #FF6700;
+    --color-input-placeholder: #ffffff80;
+
+    /* Paddings */
+    --frame-padding: 4rem;
+    
+    /* Sizes */
+    --border-width: 2px;
+    --border-radious: 8px;
+    --blur-size: 8px;
+    --font-size-small: 12px;
+    --font-size-normal: 14px;
+    --font-size-header-title: 48px;
+    --font-size-header-subtitle: 16px;
+    --font-size-content-title-big: 64px;
+    --font-size-content-title-small: 48px;
+    --font-size-navigation: 20px;
+    --font-size-footer: 9px;
+}
+
+/* Font definition and import */
+@font-face {
+    font-family: "Sansation Light";
+    font-weight: 400;
+    src: url("./res/font/Sansation_Light.ttf")
+}
+
+@font-face {
+    font-family: "Sansation";
+    font-weight: 400;
+    src: url("./res/font/Sansation_Regular.ttf")
+}
+
+/* Basic setup */
+html,
+body {
+    height: 100%;
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: var(--color-background);
+    color: var(--color-on-background);
+}
+
+body {
+    font-family: "Sansation Light";
+    font-size: var(--font-size-normal);
+    font-weight: 300;
+    text-align: justify;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-on-background);
+}
+
+b {
+    font-family: "Sansation";
+    font-weight: bold;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    border: none;
+
+    /* If we don't set this, the button will appear slightly smaller */
+    font-size: inherit;
+}
+
+footer {
+    font-size: var(--font-size-footer);
+    opacity: 50%;
+}
+
+figcaption {
+    text-align: center;
+    font-size: var(--font-size-small);
+    opacity: 85%;
+}
+
+/* Layout */
+header {
+    /* Move the header over the frame */
+    position: fixed;
+    left: 7rem;
+    top: 2.16rem;
+
+    /* Move it forward on the z-axis so that it goes over the frame  */
+    z-index: 1;
+
+    /* Define the spacing on the horizontal axis */
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+footer {
+    position: fixed;
+    left: var(--frame-padding);
+    bottom: 1rem;
+}
+
+main {
+    overflow: scroll;
+
+    /* Adjust the padding to counter the frame padding-right set to 0
+       used to place the scrollbar on the border. */
+    padding-right: var(--frame-padding);
+}
+
+main>section {
+    /* Set the max width of all the sections so that it's not spread 
+       apart too far on larger screens */
+    max-width: 58rem;
+
+    /* Center the all the sections between the nav left border and
+       the frame right border */
+    margin-right: auto;
+    margin-left: auto;
+
+    /* Separate the sections between each other */
+    margin-bottom: 6rem;
+}
+
+.frame {
+    /* Fix the frame in the center of the screen */
+    position: fixed;
+    left: var(--frame-padding);
+    right: var(--frame-padding);
+    top: var(--frame-padding);
+    bottom: var(--frame-padding);
+
+    /* Hide the excess content */
+    overflow: hidden;
+
+    /* Set the internal padding except on the bottom, so that
+       the content can reach the border. */
+    padding: var(--frame-padding);
+    padding-bottom: 0;
+
+    /* Set the right padding to 0 so that the scrollbar is
+       on the border of the frame. */
+    padding-right: 0;
+}
+
+.grid-4-col {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-3-col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-col-span-2 {
+    grid-column: span 2;
+}
+
+.grid-col-span-3 {
+    grid-column: span 3;
+}
+
+.tech-stack-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.tech-stack-fill-height {
+    height: calc(100% - 1rem - var(--border-width));
+}
+
+.flex-row {
+    display: flex;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-centered {
+    justify-content: center;
+    align-items: center;
+}
+
+/* Target the 'Android' section */
+#tech>div>:first-child {
+    grid-row: span 2;
+}
+
+/* Target the 'Other' section */
+#tech>div>:nth-last-child(2) {
+    grid-column: 3;
+}
+
+/* Target the 'Web' section */
+#tech>div>:last-child {
+    grid-column: 4;
+}
+
+#tech>div>div>h3 {
+    margin-bottom: 0.25rem;
+}
+
+/* Style */
+.solid-background-color {
+    background-color: var(--color-background);
+}
+
+.curved-angles {
+    border-radius: var(--border-radious);
+}
+
+.navigation-list {
+    /* Set the height of the navigation list so that the border
+       can go below the min height of the list */
+    padding-bottom: 15rem;
+}
+
+.navigation-element {
+    font-size: var(--font-size-navigation);
+
+    /* Define the space between navigation elements */
+    margin-bottom: 1.625rem;
+}
+
+.bordered {
+    border-style: dotted;
+    border-color: var(--color-primary);
+    border-width: var(--border-width);
+}
+
+.right-border-only {
+    border-left: none;
+    border-top: none;
+    border-bottom: none;
+}
+
+.header-title {
+    font-size: var(--font-size-header-title);
+}
+
+.header-subtitle {
+    font-size: var(--font-size-header-subtitle);
+    opacity: 70%;
+}
+
+.primary-button {
+    color: var(--color-on-background-reverse);
+    font-family: "Sansation";
+    font-weight: 700;
+    padding: 8px 16px;
+    border: none;
+    border-radius: var(--border-radious);
+    background: linear-gradient(90deg, #E3E3E3 0%, #E5E5E5 65%, #FFF 100%);
+    box-shadow: 0px 0px var(--blur-size) 0px rgba(255, 255, 255, 0.25);
+}
+.primary-button:hover {
+    background: linear-gradient(90deg, #c7c7c7 0%, #d4d4d4 65%, #ededed 100%);
+}
+.primary-button:active {
+    box-shadow: inset 0px 0px 16px rgba(122, 122, 122, 0.787);
+}
+
+.secondary-button {
+    color: var(--color-on-background);
+    border-radius: var(--border-radious);
+    background: linear-gradient(90deg, #555 0%, #555 65%, #636363 100%);
+}
+.secondary-button:hover {
+    background: linear-gradient(90deg, #4a4a4a 0%, #4a4a4a 65%, #464646 100%);
+}
+.secondary-button:active {
+    box-shadow: inset 0px 0px 16px rgba(56, 56, 56, 0.787);
+}
+
+.section-content>*:not(:last-child) {
+    margin-bottom: 2rem;
+}
+
+.line-height-large {
+    line-height: 150%;
+}
+
+.content-primary-title {
+    text-align: start;
+    font-family: "Sansation";
+    font-size: var(--font-size-content-title-big);
+    font-weight: 400;
+}
+
+.content-secondary-title {
+    text-align: start;
+    font-family: "Sansation";
+    font-size: var(--font-size-content-title-small);
+    font-weight: 400;
+    margin-bottom: 2rem;
+}
+
+.gap-1 {
+    gap: 1rem;
+}
+
+.gap-1-5 {
+    gap: 1.5rem;
+}
+
+.gap-4 {
+    gap: 4rem;
+}
+
+.gap-6 {
+    gap: 6rem;
+}
+
+.margin-bottom-2 {
+    margin-bottom: 2rem;
+}
+
+.padding-1 {
+    padding: 1rem;
+}
+
+.no-decoration {
+    list-style: none;
+}
+
+form>label {
+    margin-bottom: 0.25rem;
+}
+
+form>input:not(.primary-button) {
+    border: none;
+    border-radius: 8px;
+    padding: 12px 8px;
+    background-color: var(--color-container);
+    margin-bottom: 1rem;
+    color: var(--color-on-background);
+}
+
+form>input:not(.primary-button):focus {
+    outline: none;
+    caret-color: var(--color-on-background);
+}
+
+form>input::placeholder {
+    color: var(--color-input-placeholder);
+}
+
+ul.flex-row {
+    gap: 0.25rem;
+}
+
+ul.flex-row>li {
+    flex-basis: 0;
+}
+
+@media only screen and (max-width: 1232px) {
+    header {
+        position: relative;
+        left: 0;
+        top: 0;
+    }
+
+    .frame {
+        position: relative;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        border: none;
+        display: block;
+        /* width: 100vw; */
+    }
+
+    footer {
+        position: relative;
+        width: max-content;
+    }
+
+    .navigation-list {
+        border: none;
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width: 824px) {
+    main {
+        padding: 0;
+    }
+
+    .frame {
+        padding: calc(var(--frame-padding) / 2);
+    }
+
+    .grid-3-col {
+        display: block;
+    }
+
+    .grid-3-col>img {
+        display: none;
+    }
+
+    #tech>.grid-4-col {
+        display: block;
+    }
+
+    #tech>.grid-4-col>:not(:last-child) {
+        margin-bottom: 1rem;
+    }
+
+    #contact {
+        display: block;
+    }
+
+    #contact img {
+        width: 100%;
+    }
+}
