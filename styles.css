@@ -488,17 +488,18 @@ form>textarea::placeholder {
 
     #what-do-i-love .content-container {
         display: flex;
+        flex-direction: row-reverse;
         gap: 3.4375rem;
         align-items: center;
         max-width: 55.125rem;
     }
 
-    #what-do-i-love .content-container>:nth-child(1) {
+    #what-do-i-love .content-container>:nth-child(2) {
         max-width: 184px;
         border-radius: 16px;
     }
 
-    #what-do-i-love .content-container>:nth-child(2) {
+    #what-do-i-love .content-container>:nth-child(3) {
         max-width: 271px;
     }
 }
