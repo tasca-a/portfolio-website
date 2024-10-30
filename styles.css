@@ -277,9 +277,6 @@ main>section:not(:last-child) {
     box-shadow: 0px 0px var(--blur-size) 0px rgba(255, 255, 255, 0.25);
 }
 
-/* .primary-button:hover {
-    background: linear-gradient(90deg, #c7c7c7 0%, #d4d4d4 65%, #ededed 100%);
-} */
 .primary-button:active {
     box-shadow: inset 0px 0px 16px rgba(122, 122, 122, 0.787);
 }
@@ -290,9 +287,6 @@ main>section:not(:last-child) {
     background: linear-gradient(90deg, #555 0%, #555 65%, #636363 100%);
 }
 
-/* .secondary-button:hover {
-    background: linear-gradient(90deg, #4a4a4a 0%, #4a4a4a 65%, #464646 100%);
-} */
 .secondary-button:active {
     box-shadow: inset 0px 0px 16px rgba(56, 56, 56, 0.787);
 }
@@ -391,6 +385,35 @@ form>textarea::placeholder {
     color: var(--color-input-placeholder);
 }
 
+#who-am-i>img{
+    display: inherit;
+    margin: auto auto 1rem auto;
+}
+
+#enel img {
+    display: inherit;
+    max-width: 285px;
+    margin: 1rem auto 2rem auto;
+}
+
+#super-dim img {
+    display: inherit;
+    margin: 2rem auto 2rem auto;
+}
+
+#what-do-i-love .content-container>:nth-child(3) {
+    max-width: 184px;
+    border-radius: 16px;
+}
+
+#what-do-i-love .content-container>:nth-child(2) {
+    max-width: 271px;
+}
+
+#what-am-i-working-on a{
+    color: var(--color-primary);
+}
+
 @media (prefers-reduced-motion: no-preference) {
     html {
         /* Remove smooth scroll if the user could be harmed
@@ -410,6 +433,14 @@ form>textarea::placeholder {
 
 @media only screen and (min-width: 760px) {
     /* Homepage */
+    .primary-button:hover {
+        background: linear-gradient(90deg, #c7c7c7 0%, #d4d4d4 65%, #ededed 100%);
+    }
+
+    .secondary-button:hover {
+        background: linear-gradient(90deg, #4a4a4a 0%, #4a4a4a 65%, #464646 100%);
+    }
+
     #hero {
         display: flex;
         gap: 6rem;
@@ -453,6 +484,10 @@ form>textarea::placeholder {
         gap: 8.25rem;
     }
 
+    #who-am-i>img {
+        margin: 0;
+    }
+
     #who-am-i .content-container {
         max-width: 31.5rem;
     }
@@ -469,10 +504,12 @@ form>textarea::placeholder {
         display: flex;
         flex-direction: row-reverse;
         gap: 8.75rem;
+        padding-bottom: 2rem;
     }
 
     #enel>img {
         max-width: 285px;
+        margin: 0;
         margin-left: 4rem;
     }
 
@@ -483,7 +520,12 @@ form>textarea::placeholder {
 
     #super-dim>img {
         max-width: 146px;
+        margin: 0;
         margin-right: 8rem;
+    }
+
+    #what-am-i-working-on .content-container {
+        max-width: 55.125rem;
     }
 
     #what-do-i-love .content-container {
@@ -492,15 +534,6 @@ form>textarea::placeholder {
         gap: 3.4375rem;
         align-items: center;
         max-width: 55.125rem;
-    }
-
-    #what-do-i-love .content-container>:nth-child(2) {
-        max-width: 184px;
-        border-radius: 16px;
-    }
-
-    #what-do-i-love .content-container>:nth-child(3) {
-        max-width: 271px;
     }
 }
 
