@@ -9,3 +9,13 @@ hamburgerMenu.addEventListener(
         nav.classList.toggle("active")
     },
 )
+
+const workTogetherButton = document.getElementById("workTogether");
+const contactSection = document.getElementById("contact")
+
+workTogetherButton.addEventListener(
+    "click",
+    function() {
+        contactSection.scrollIntoView({ behavior: "smooth"});
+    }
+)

@@ -409,6 +409,7 @@ form>textarea::placeholder {
 }
 
 @media only screen and (min-width: 760px) {
+    /* Homepage */
     #hero {
         display: flex;
         gap: 6rem;
@@ -444,6 +445,61 @@ form>textarea::placeholder {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
         max-width: 52.4375rem;
+    }
+
+    /* About me */
+    #who-am-i {
+        display: flex;
+        gap: 8.25rem;
+    }
+
+    #who-am-i .content-container {
+        max-width: 31.5rem;
+    }
+
+    #what-drives-me .content-container {
+        max-width: 55.125rem;
+    }
+
+    #what-have-i-built .content-container {
+        max-width: 55.125rem;
+    }
+
+    #enel {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 8.75rem;
+    }
+
+    #enel>img {
+        max-width: 285px;
+        margin-left: 4rem;
+    }
+
+    #super-dim {
+        display: flex;
+        gap: 13.4375rem;
+    }
+
+    #super-dim>img {
+        max-width: 146px;
+        margin-right: 8rem;
+    }
+
+    #what-do-i-love .content-container {
+        display: flex;
+        gap: 3.4375rem;
+        align-items: center;
+        max-width: 55.125rem;
+    }
+
+    #what-do-i-love .content-container>:nth-child(1) {
+        max-width: 184px;
+        border-radius: 16px;
+    }
+
+    #what-do-i-love .content-container>:nth-child(2) {
+        max-width: 271px;
     }
 }
 
