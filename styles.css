@@ -230,6 +230,11 @@ main>section:not(:last-child) {
     margin-bottom: 6rem;
 }
 
+img {
+    display: inherit;
+    margin: auto;
+}
+
 .content {
     margin-top: 6rem;
 }
