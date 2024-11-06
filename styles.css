@@ -652,6 +652,10 @@ form>textarea::placeholder {
         padding-right: var(--frame-padding);
     }
 
+    main::-webkit-scrollbar { 
+        display: none;  /* Safari and Chrome */
+    }
+
     main>section {
         /* Set the max width of all the sections so that it's not spread 
            apart too far on larger screens */
