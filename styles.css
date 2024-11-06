@@ -419,6 +419,10 @@ form>textarea::placeholder {
     color: var(--color-primary);
 }
 
+#values img {
+    padding-right: 1rem;
+}
+
 @media (prefers-reduced-motion: no-preference) {
     html {
         /* Remove smooth scroll if the user could be harmed
@@ -459,6 +463,7 @@ form>textarea::placeholder {
         display: flex;
         flex-direction: row-reverse;
         justify-content: start;
+        align-items: start;
         gap: 5.68rem;
     }
 
@@ -676,6 +681,7 @@ form>textarea::placeholder {
     #values img {
         grid-column: 1;
         grid-row: 1;
+        padding-right: 0;
     }
 
     .tech-stack-container {
@@ -689,6 +695,9 @@ form>textarea::placeholder {
     #android .tech-stack-element {
         height: calc(100% - var(--font-size-small) - 4px - var(--border-width) * 2);
     }
+    #android .icon-container {
+        flex-wrap: wrap;
+    }
 
     #design {
         grid-column: span 2;
@@ -697,4 +706,21 @@ form>textarea::placeholder {
     #contact {
         max-width: 58rem;
     }
+}
+
+.fade-in {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 300ms;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }

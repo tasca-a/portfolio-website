@@ -19,7 +19,7 @@ navLinks.forEach(link => {
         function(event) {
             event.preventDefault();
 
-            // Het the page to load from the data-page attribute.
+            // Get the page to load from the data-page attribute.
             const page = this.getAttribute("data-page");
             loadPage(page);
 
@@ -34,12 +34,15 @@ navLinks.forEach(link => {
 
 const content = document.querySelector("main");
 function loadPage(page) {
+    content.classList.remove("fade-in");
     fetch(`${page}.html`)
         .then(response => {
             if (!response.ok) throw new Error(`Failed to load ${page}`);
             return response.text();
         })
         .then(data => {
+            content.classList.add("fade-in");
+
             // Update the main content.
             content.innerHTML = data;
 
