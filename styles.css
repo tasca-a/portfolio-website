@@ -237,6 +237,12 @@ img {
 
 .content {
     margin-top: 6rem;
+    z-index: 1;
+}
+
+.content.background {
+    z-index: 1;
+    opacity: 100%;
 }
 
 .primary-title {
@@ -567,17 +573,22 @@ form>textarea::placeholder {
         border: none;
         max-width: fit-content;
 
+        background: linear-gradient(180deg, #202020 39%, #ededed00 40%);
+
         /* Move the header over the frame */
         position: fixed;
         left: 7rem;
         top: 2.16rem;
 
         /* Move it forward on the z-axis so that it goes over the frame  */
-        z-index: 1;
+        z-index: 2;
+
+        border-radius: 1rem;
 
         /* Define the spacing on the horizontal axis */
         padding-left: 1rem;
         padding-right: 1rem;
+        padding-bottom: 0.5rem;
     }
 
     header h1 {
@@ -632,6 +643,8 @@ form>textarea::placeholder {
 
         padding: 0;
         top: 0;
+
+        background-color: transparent;
     }
 
     nav>ul {
